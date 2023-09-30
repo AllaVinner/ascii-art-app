@@ -1,0 +1,71 @@
+#root {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.display-linebreak {
+  white-space: pre-line;
+}
+
+#app-container {
+  display: grid;
+  grid-template-rows: 1fr 5fr;
+  grid-template-columns: 1fr;
+  margin: 10px;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+#header-div {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+#inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+#images {
+  grid-row: span 1;
+  grid-column: span 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+h2 {
+  margin: 0;
+}
+
+#src-image {
+  height: calc(80vh - 3em);
+}
+
+
