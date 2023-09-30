@@ -8,5 +8,5 @@ export default defineConfig({
   plugins: [react(),
     wasm(),
     topLevelAwait()],
-    base: 'vite-wasm'
+    base: 'ascii-art-app'
 })
