@@ -1,9 +1,40 @@
-# React + Vite
+# React + Vite + Wasm-Pack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+>>npm create vite@latest
+: app1
+>>cd app1
+>>npm install
+>>cargo generate --git https://github.com/rustwasm/wasm-pack-template
+:wasm-src
+>>cd wasm-src
+>>wasm-pack build
+>>cd ..
+>>npm i vite-plugin-wasm
+>>npm i vite-plugin-top-level-await
+?Include the wasm binaries (add pkg folder), or build them in github somewhere
+* Add github action workflow
+* enable github pages on github
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+/////////////////
+#src/App.js
+import * as wasm from "../wasm-src/pkg/wasm_src.js";
 
+wasm.greet();
+/////////////////
+
+/////////////////
+#vite.config.js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import wasm from "vite-plugin-wasm";
+import topLevelAwait from "vite-plugin-top-level-await";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react(),
+    wasm(),
+    topLevelAwait()],
+  base: 'my-app' // for github actions
+})
+//////////////////
