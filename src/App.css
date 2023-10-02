@@ -35,7 +35,7 @@
   display: grid;
   grid-template-rows: 1fr 5fr;
   grid-template-columns: 1fr;
-  margin: 10px;
+  margin: 0;
   height: 100vh;
   width: 100vw;
 }
@@ -44,6 +44,7 @@
 #header-div {
   grid-row: 1;
   grid-column: 1;
+  padding: 20px
 }
 
 #inputs {

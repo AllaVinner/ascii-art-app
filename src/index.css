@@ -36,6 +36,11 @@ h1 {
   margin: 0;
 }
 
+h3 {
+  margin: 0;
+}
+
+input::file-selector-button,
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -66,6 +71,7 @@ input {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 input:hover {
   border-color: #646cff;
 }
@@ -74,15 +80,29 @@ input:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+input[type="numeric"] {
+  width: 3em;
+}
+
+input[type="file"] {
+  padding: 0;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #aaa;
   }
-  button {
-    background-color: #f9f9f9;
+  button, 
+  input,
+  input::file-selector-button {
+    background-color: #f1f1f1;
+  }
+
+  button:hover, input:hover{
+    border-color: #aaa;
   }
 }
