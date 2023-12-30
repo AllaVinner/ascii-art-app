@@ -1,6 +1,7 @@
 # ASCII ART APP
 [App Link](https://allavinner.github.io/ascii-art-app/)
-
+[md link](README.md)
+[[README.md]]
 ## Intro
 
 ## Run
